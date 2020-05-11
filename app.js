@@ -3,89 +3,28 @@ $(document).ready(function () {
   $("#currentDay").text(currentDate);
 
   var exactTime = parseInt(moment().format("HH"));
-  console.log(exactTime);
+  // console.log(exactTime);
 
-  if (exactTime === 9) {
-    $("#9").attr("class", "row bg-success");
+  function checkTime(id, num) {
+    if (exactTime === num) {
+      $(id).attr("class", "row bg-success");
+    }
+    if (exactTime > num) {
+      $(id).attr("class", "row bg-danger");
+    }
+    if (exactTime < num) {
+      $(id).attr("class", "row bg-secondary");
+    }
   }
-  if (exactTime > 9) {
-    $("#9").attr("class", "row bg-danger");
-  }
-  if (exactTime < 9) {
-    $("#9").attr("class", "row bg-secondary");
-  }
-  if (exactTime === 10) {
-    $("#10").attr("class", "row bg-success");
-  }
-  if (exactTime > 10) {
-    $("#10").attr("class", "row bg-danger");
-  }
-  if (exactTime < 10) {
-    $("#10").attr("class", "row bg-secondary");
-  }
-  if (exactTime === 11) {
-    $("#11").attr("class", "row bg-success");
-  }
-  if (exactTime > 11) {
-    $("#11").attr("class", "row bg-danger");
-  }
-  if (exactTime < 11) {
-    $("#11").attr("class", "row bg-secondary");
-  }
-  if (exactTime === 12) {
-    $("#12").attr("class", "row bg-success");
-  }
-  if (exactTime > 12) {
-    $("#12").attr("class", "row bg-danger");
-  }
-  if (exactTime < 12) {
-    $("#12").attr("class", "row bg-secondary");
-  }
-  if (exactTime === 13) {
-    $("#13").attr("class", "row bg-success");
-  }
-  if (exactTime > 13) {
-    $("#13").attr("class", "row bg-danger");
-  }
-  if (exactTime < 13) {
-    $("#13").attr("class", "row bg-secondary");
-  }
-  if (exactTime === 14) {
-    $("#14").attr("class", "row bg-success");
-  }
-  if (exactTime > 14) {
-    $("#14").attr("class", "row bg-danger");
-  }
-  if (exactTime < 14) {
-    $("#14").attr("class", "row bg-secondary");
-  }
-  if (exactTime === 15) {
-    $("#15").attr("class", "row bg-success");
-  }
-  if (exactTime > 15) {
-    $("#15").attr("class", "row bg-danger");
-  }
-  if (exactTime < 15) {
-    $("#15").attr("class", "row bg-secondary");
-  }
-  if (exactTime === 16) {
-    $("#16").attr("class", "row bg-success");
-  }
-  if (exactTime > 16) {
-    $("#16").attr("class", "row bg-danger");
-  }
-  if (exactTime < 16) {
-    $("#16").attr("class", "row bg-secondary");
-  }
-  if (exactTime === 17) {
-    $("#17").attr("class", "row bg-success");
-  }
-  if (exactTime > 17) {
-    $("#17").attr("class", "row bg-danger");
-  }
-  if (exactTime < 17) {
-    $("#17").attr("class", "row bg-secondary");
-  }
+  checkTime("#9", 9);
+  checkTime("#10", 10);
+  checkTime("#11", 11);
+  checkTime("#12", 12);
+  checkTime("#13", 13);
+  checkTime("#14", 14);
+  checkTime("#15", 15);
+  checkTime("#16", 16);
+  checkTime("#17", 17);
 
   $("#9am-save").on("click", function () {
     var userText = $("#9am-note").val();
